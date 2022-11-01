@@ -7,7 +7,7 @@ import userRouter from './routes/userRouter';
 import http from 'http';
 import socketUtil from './socketUtil';
 
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
 connectDB();
 const app = express();
@@ -64,6 +64,6 @@ app.use("/api/users", userRouter);
 
 app.use(errorHandler);
 
-server.listen(PORT, () => {
+server.listen(port, () => {
     console.log('listening on port ' + PORT);
 })
